@@ -1,1 +1,1 @@
---argumentsRealm.passwd.jenkins=PASSWORD_HERE --argumentsRealm.roles.jenkins=admin
+--argumentsRealm.passwd.jenkins=[CHANGE-ME] --argumentsRealm.roles.jenkins=admin

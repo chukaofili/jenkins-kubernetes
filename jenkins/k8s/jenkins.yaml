@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: master
-        image: jenkins:2.32.3
+        image: jenkins/jenkins:2.60.3
         ports:
         - containerPort: 8080
         - containerPort: 50000
@@ -47,13 +47,6 @@ spec:
         volumeMounts:
         - mountPath: /var/jenkins_home
           name: jenkins-home
-        resources:
-          limits:
-            cpu: 500m
-            memory: 1500Mi
-          requests:
-            cpu: 500m
-            memory: 1500Mi
       volumes:
       - name: jenkins-home
         gcePersistentDisk:

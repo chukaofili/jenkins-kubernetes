@@ -17,7 +17,14 @@ kind: Ingress
 metadata:
   name: jenkins
   namespace: jenkins
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
 spec:
-  backend:
-    serviceName: jenkins-ui
-    servicePort: 8080
+  rules:
+  - host: jenkins.chronosng.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: jenkins-ui
+          servicePort: 8080
