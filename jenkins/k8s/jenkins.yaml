@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: master
-        image: jenkins/jenkins:2.60.3
+        image: jenkins/jenkins:2.89.2
         ports:
         - containerPort: 8080
         - containerPort: 50000
@@ -46,11 +46,11 @@ spec:
               key: options
         volumeMounts:
         - mountPath: /var/jenkins_home
-          name: jenkins-home
+          name: jenkins-cd-home
       volumes:
-      - name: jenkins-home
+      - name: jenkins-cd-home
         gcePersistentDisk:
-          pdName: jenkins-home
+          pdName: jenkins-cd-home
           fsType: ext4
           partition: 1
 # [END jenkins_deployment]
